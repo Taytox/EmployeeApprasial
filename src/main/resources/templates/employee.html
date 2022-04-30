@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Employee Appraisal System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    </head>
+    <body> 
+
+        <div class="container my-2">
+                    <h1>Employee Appraisal System</h1>
+        <hr>
+        <h2 th:text="${foundEmployee.firstName}+' '+${foundEmployee.lastName}"></h2>
+
+            <br>
+            <a th:href="@{/dashboard}" class="btn btn-primary btn-sm mb-3"> Back to dashboard</a>
+            <br>
+            <table border="1" class="table table-striped table-responsive-md">
+                <thead>
+                    <tr>
+                        <th>Staff ID</th>
+                        <th> First Name</th>
+                        <th> Last Name</th> 
+                        <th> Date of Birth</th>    
+                        <th> Line Manager</th>
+                        <th> Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                   
+                       <td th:text="${foundEmployee.id}"></td>
+                       <td th:text="${foundEmployee.firstName}"></td>
+                       <td th:text="${foundEmployee.lastName}"></td>
+                       <td th:text="${foundEmployee.dob}"></td> 
+                       <td></td> 
+                     <!--
+                       <td><a th:href="@{/showFormForUpdate/{id}(id=${employee.id})}" class="btn btn-primary">View Employee details</a>&nbsp; !-->
+                    </tr>
+                </tbody>
+            </table>
+            
+            
+            
+            
+            
+        </div>
+    </body>
+</html>

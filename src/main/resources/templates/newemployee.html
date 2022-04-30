@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/Other/html.html to edit this template
+-->
+<html>
+    <head>
+        <title>PRT Employee Management System</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" 
+              integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+              crossorigin="anonymous" >
+    </head>
+    <body>
+        <div class="container">
+        <h1>Employee Appraisal System</h1>
+        <hr>
+        <h2>Add Employee</h2>
+        <br>
+        <form action="#" th:action="@{/saveEmployee}" th:object="${employee}" method="POST">
+        <input type="text" id="firstname" th:field="*{firstName}" placeholder="Employee First Name" 
+
+               required class="form-control mb-4 col-4">
+        <input type="text" id="lastname" th:field="*{lastName}" placeholder="Employee Last Name" 
+               required class="form-control mb-4 col-4">       
+        <input type="date" id="dob" th:field="*{dob}"
+               required class="form-control mb-4 col-4">         
+        <label>Select Employee's line manager</label>
+        <select class ="form-control" id="dropDownList" th:field="*{lineManager}">
+            <option value=''>No line manager</option>
+            <option th:each="option : ${linemanagers}" th:value ="${option.id}" th:text="${option.getFullName()}"></option>
+        </select>
+        
+        
+        
+        
+        
+        
+        
+        <button type="submit" class="btn btn-info col-2">Add Employee</button>
+        </form>
+        <hr>
+        <a th:href="@{/dashboard}"> Back to dashboard</a>
+    </div>
+    </body>
+</html>
