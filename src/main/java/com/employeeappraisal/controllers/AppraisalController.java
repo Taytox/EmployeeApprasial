@@ -32,7 +32,11 @@ public String viewHomePage (Model model){
  public String getDashboard(Model model){  
 return "dashboard";
  }
-
+ 
+@GetMapping("/")
+ public String getNoPage(Model model){  
+return "redirect:/login";
+ }
  @PostMapping("/dashboard")
  public String viewDashboard(@ModelAttribute("login")Login login,Model model){
      if (login.getPassword().equals("DemoPassword")){
