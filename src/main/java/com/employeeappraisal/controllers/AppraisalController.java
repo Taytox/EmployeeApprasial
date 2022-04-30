@@ -28,6 +28,10 @@ public String viewHomePage (Model model){
      model.addAttribute("login", new Login());
      return "login";
 } 
+ @GetMapping("/")
+ public String getRoot(Model model){  
+    return "redirect:/login";
+ }
 @GetMapping("/dashboard")
  public String getDashboard(Model model){  
 return "dashboard";
